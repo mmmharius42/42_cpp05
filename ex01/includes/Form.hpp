@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:16 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/27 18:18:46 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/27 18:25:37 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Form {
     private :
         const std::string   _name;
-        bool                _Signed;
+        bool                _isSigned;
         const int           _gradeToSigned;
         const int           _gradeToExecute;
         
@@ -30,7 +30,7 @@ class Form {
         ~Form();
 
         std::string getName() const;
-        bool        getSigned() const;
+        bool        getisSigned() const;
         int         getGradeToSigned() const;
         int         getGradeToExecute() const;
         
