@@ -14,13 +14,14 @@
 
 int main() {
     try {
-        Bureaucrat Test();
-        Test.decrementGrade();
+        Bureaucrat test("test", 150);
+        std::cout << test << std::endl;
+        test.incrementGrade();
+        std::cout << test << std::endl;
     }
-    catch ()
+    catch (std::exception& e)
     {
-        std::cout << "catch" << std::endl;
+        std::cout << e.what() << std::endl;
     }
-    
-
+    return 0;
 }
