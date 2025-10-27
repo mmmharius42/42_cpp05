@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:26:37 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/23 15:50:31 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/27 18:18:28 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,6 @@ void Bureaucrat::decrementGrade() {
     if (_grade >= 150)
         throw GradeTooLowException();
     _grade++;
-}
-
-const char* Bureaucrat::GradeTooLowException::what() const throw() {
-    return "grade to Low";
-}
-
-const char* Bureaucrat::GradeTooHighException::what() const throw() {
-    return "grade to high";
 }
 
 Bureaucrat::~Bureaucrat() {
