@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:13 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 20:05:54 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 21:17:09 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,17 @@ AForm& AForm::operator=(const AForm& other) {
     return *this;
 }
 
-bool AForm::getisSigned() const {
+void AForm::execute(Bureaucrat const & executor) const {
+    if (!this->_isSigned)
+        throw FormNotSignedException();
+    
+    if (executor.getGradeToExecute() > this->_gradeToExecute)
+        throw GradeTooLowException();
+    
+    this->executeActions();
+}
+
+bool AForm::isSigned() const {
     return _isSigned;
 }
 
@@ -56,7 +66,7 @@ std::ostream& operator<<(std::ostream& os, const AForm& form) {
     os << "Form : " << form.getName() << ", grade to sign :" 
     << form.getGradeToSigned() << ", grade to exec :" 
     << form.getGradeToExecute() << ", and is " 
-    << (form.getisSigned() ? "signed" : "not signed");
+    << (form.isSigned() ? "signed" : "not signed");
     return os;
 }
 

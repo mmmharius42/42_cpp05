@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:16 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 20:07:19 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 21:15:41 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include "fstream"
+#include <fstream>
 #include "Bureaucrat.hpp"
-class Bureaucrat;
 
 class AForm {
     private :
@@ -37,7 +36,7 @@ class AForm {
         
         void                execute(Bureaucrat const & executor) const;
         const std::string&  getName() const;
-        bool                getisSigned() const;
+        bool                isSigned() const;
         int                 getGradeToSigned() const;
         int                 getGradeToExecute() const;
         void                beSigned(Bureaucrat const &Bureaucrat);
@@ -56,10 +55,10 @@ class AForm {
                 }
         };
 
-        class FormNotSigned : public std::exception {
+        class FormNotSignedException : public std::exception {
             public :
                 virtual const char* what() const throw() {
-                    return "Form not signed yet.";
+                    return "form not signed.";
                 }
         };
 };
