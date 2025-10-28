@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:26:36 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 18:13:29 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 19:45:07 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Form;
 
 class Bureaucrat {
     private :
-        const std::string _name;
-        int         _grade;
+        const std::string   _name;
+        int                 _grade;
     public:
         Bureaucrat();
         Bureaucrat(const std::string& name, int grade);
