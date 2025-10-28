@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 19:37:23 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 20:02:37 by mpapin           ###   ########.fr       */
+/*   Created: 2025/10/28 20:45:03 by mpapin            #+#    #+#             */
+/*   Updated: 2025/10/28 20:55:39 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-#define ROBOTOMYREQUESTFORM_HPP
+#include <cstdlib>
+#include "RobotomyRequestForm.hpp"
 
-#include "AForm.hpp"
-
-class RobotomyRequestForm : public AForm {
-    private :
-        std::string _target;
-    
-    public :
-        RobotomyRequestForm(std::string target) : AForm("Robotomy", 72, 45), _target(target) {}
-        void executeActions() const;
-};
-
-#endif
+void    RobotomyRequestForm::executeActions() const {
+    std::cout << "ashdakjdHADLJHDWUIDHDNBdGHSDYUQWDJASBDJHABXYUQWBD" << std::endl;
+    if (rand() % 2 == 0) {
+        std::cout << this->_target << "Robotomy successful!\n"; }
+    else
+        std::cout << this->_target << "Robotomy failed!\n";
+}

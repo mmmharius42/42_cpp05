@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:16 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 18:41:32 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 20:05:26 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Form {
 
         const std::string&  getName() const;
         bool                getisSigned() const;
-        bool                isSigned() const;  
         int                 getGradeToSigned() const;
         int                 getGradeToExecute() const;
         void                beSigned(Bureaucrat const &Bureaucrat);
