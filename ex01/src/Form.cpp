@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:13 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/27 18:29:26 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 18:43:16 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ Form::Form(std::string const &name, int gradeToSigned, int gradeToExecute)
         throw Form::GradeTooLowException();
 }
 
-void Form::beSigned(Bureaucrat const &Bureaucrat) {
-    if (Bureaucrat.GetGrade() > _gradeToSigned)
-        throw Form::GradeTooLowException();
-    _isSigned = true;
+Form::Form(const Form& other) : _name(other._name), _isSigned(other._isSigned),
+    _gradeToSigned(other._gradeToSigned), _gradeToExecute(other._gradeToExecute) {}
+
+Form& Form::operator=(const Form& other) {
+    if (this != &other) {
+        this->_isSigned = other._isSigned;
+    }
+    return *this;
 }
 
 bool Form::getisSigned() const {
@@ -37,3 +41,23 @@ int Form::getGradeToExecute() const {
 int Form::getGradeToSigned() const {
     return _gradeToSigned;
 }
+
+const std::string& Form::getName() const { 
+    return _name; 
+}
+
+void Form::beSigned(Bureaucrat const &Bureaucrat) {
+    if (Bureaucrat.GetGrade() > _gradeToSigned)
+        throw Form::GradeTooLowException();
+    _isSigned = true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Form& form) {
+    os << "Form : " << form.getName() << ", grade to sign :" 
+    << form.getGradeToSigned() << ", grade to exec :" 
+    << form.getGradeToExecute() << ", and is " 
+    << (form.getisSigned() ? "signed" : "not signed");
+    return os;
+}
+
+Form::~Form() {}

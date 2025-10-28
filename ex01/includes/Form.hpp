@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:16 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/27 18:25:37 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 18:41:32 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,17 @@ class Form {
         
     public :
         Form();
-        Form(std::string const &name, const int gradeToSigned, const int gradeToExecute);
+        Form(std::string const &name, int gradeToSigned, int gradeToExecute);
+        Form(const Form& other);
+        Form& operator=(const Form& other);
         ~Form();
 
-        std::string getName() const;
-        bool        getisSigned() const;
-        int         getGradeToSigned() const;
-        int         getGradeToExecute() const;
-        
-        void        beSigned(Bureaucrat const &Bureaucrat);
+        const std::string&  getName() const;
+        bool                getisSigned() const;
+        bool                isSigned() const;  
+        int                 getGradeToSigned() const;
+        int                 getGradeToExecute() const;
+        void                beSigned(Bureaucrat const &Bureaucrat);
         
         class GradeTooHighException : public std::exception {
             public :
@@ -50,5 +52,7 @@ class Form {
                 }
         };
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& Form);
 
 #endif
