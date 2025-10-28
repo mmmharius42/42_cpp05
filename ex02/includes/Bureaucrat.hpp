@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:26:36 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 19:45:07 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/28 23:54:34 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <exception>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     private :
@@ -42,12 +42,13 @@ class Bureaucrat {
                     return "grade to low"; }
         };
 
-        const std::string& GetName() const;
-        int GetGrade() const;
-        void decrementGrade();
-        void incrementGrade();
+        const std::string&  getName() const;
+        int                 getGrade() const;
+        void                decrementGrade();
+        void                incrementGrade();
 
-        void signForm(Form& form) const;
+        void                signForm(AForm& form) const;
+        void                executeForm(AForm const & form) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bureaucrat);

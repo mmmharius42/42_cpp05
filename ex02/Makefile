@@ -4,7 +4,12 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iincludes
 SRCDIR = src
 OBJDIR = obj
 
-SRCS = main.cpp src/Bureaucrat.cpp src/Form.cpp
+SRCS = main.cpp \
+       src/Bureaucrat.cpp \
+       src/AForm.cpp \
+       src/ShrubberyCreationForm.cpp \
+       src/RobotomyRequestForm.cpp \
+       src/PresidentialPardonForm.cpp
 
 OBJS = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.cpp=.o)))
 

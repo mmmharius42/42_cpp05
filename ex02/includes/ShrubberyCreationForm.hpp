@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:36:58 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 20:02:30 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/29 00:02:57 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ class ShrubberyCreationForm : public AForm {
     private :
         std::string _target;
     
-    public :
-        ShrubberyCreationForm(std::string target) : AForm("Shrubbery", 145, 137), _target(target) {}
+    protected:
         void executeActions() const;
+
+    public :
+        ShrubberyCreationForm(std::string const& target) : AForm("Shrubbery", 145, 137), _target(target) {}
+        ShrubberyCreationForm(ShrubberyCreationForm const& other);
+        ShrubberyCreationForm& operator=(ShrubberyCreationForm const& other);
+        ~ShrubberyCreationForm();
+
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:13 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 21:17:09 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/29 00:07:32 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void AForm::execute(Bureaucrat const & executor) const {
     if (!this->_isSigned)
         throw FormNotSignedException();
     
-    if (executor.getGradeToExecute() > this->_gradeToExecute)
+    if (executor.getGrade() > this->_gradeToExecute)
         throw GradeTooLowException();
     
     this->executeActions();
@@ -57,7 +57,7 @@ const std::string& AForm::getName() const {
 }
 
 void AForm::beSigned(Bureaucrat const &Bureaucrat) {
-    if (Bureaucrat.GetGrade() > _gradeToSigned)
+    if (Bureaucrat.getGrade() > _gradeToSigned)
         throw AForm::GradeTooLowException();
     _isSigned = true;
 }

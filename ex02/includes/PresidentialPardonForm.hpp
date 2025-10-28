@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:37:22 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 19:40:14 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/29 00:06:49 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@ class PresidentialPardonForm : public AForm {
     private :
         std::string _target;
     
+    protected :
+        void executeActions() const;
+    
     public :
         PresidentialPardonForm(std::string target) : AForm("Presidential", 25, 5), _target(target) {}
-        void execute() const;
+        PresidentialPardonForm(PresidentialPardonForm const& other);
+        PresidentialPardonForm& operator=(PresidentialPardonForm const& other);
+        ~PresidentialPardonForm();
 };
 
 #endif
