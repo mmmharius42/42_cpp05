@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:49:13 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 19:03:16 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/29 15:49:45 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ const std::string& Form::getName() const {
 }
 
 void Form::beSigned(Bureaucrat const &Bureaucrat) {
-    if (Bureaucrat.GetGrade() > _gradeToSigned)
+    if (Bureaucrat.getGrade() > _gradeToSigned)
         throw Form::GradeTooLowException();
     _isSigned = true;
 }

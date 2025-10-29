@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:26:37 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 19:03:19 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/29 15:49:45 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,15 @@ Bureaucrat::~Bureaucrat() {
     std::cout << "deconstructeur called" << std::endl;
 }
 
-int Bureaucrat::GetGrade() const {
+int Bureaucrat::getGrade() const {
     return _grade;
 }
 
-const std::string& Bureaucrat::GetName() const {
+const std::string& Bureaucrat::getName() const {
     return _name;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& Bureaucrat) {
-    os << Bureaucrat.GetName() << ", bureaucrat grade " << Bureaucrat.GetGrade() << ".";
+    os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << ".";
     return os;
 }

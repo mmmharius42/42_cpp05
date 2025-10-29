@@ -6,7 +6,7 @@
 /*   By: mpapin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:26:36 by mpapin            #+#    #+#             */
-/*   Updated: 2025/10/28 19:45:23 by mpapin           ###   ########.fr       */
+/*   Updated: 2025/10/29 15:49:46 by mpapin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ class Bureaucrat {
                     return "grade to low"; }
         };
 
-        const std::string& GetName() const;
-        int GetGrade() const;
+        const std::string& getName() const;
+        int getGrade() const;
         void decrementGrade();
         void incrementGrade();
 };
